@@ -1,0 +1,35 @@
+{
+    "app": {
+    },
+    "wizard": [{
+        "step_title":"Configure Web Server",
+        "items":[{
+            "type":"textfield",
+            "desc":"Web Server HTTP port",
+            "subitems":[{
+                "key":"app.gitlab.ports['80']",
+                "desc":"Web Server HTTP port (desc)",
+                "validator":{
+                }
+            }]
+       },
+       {
+            "type":"textfield",
+            "desc":"Web Server HTTPS port",
+            "subitems":[{
+                "key":"app.gitlab.ports['443']",
+                "desc":"Web Server HTTPS port (desc)",
+                "validator":{
+                }
+            }]
+       }]
+    }],
+    "env": {
+        "web": {
+            "environment": {
+                "HTTP_PORT": "app.web.ports.80",
+                "HTTPS_PORT": "app.web.ports.443"
+            }
+        }
+    }
+}
