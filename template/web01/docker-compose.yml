@@ -1,5 +1,7 @@
 web:
-  image: php:7.1-apache
+  build:
+      context: ./
+      dockerfile: php71-apache/Dockerfile
   links:
     - db:mysql
   ports:
