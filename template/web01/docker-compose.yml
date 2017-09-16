@@ -1,25 +1,23 @@
-version: '2'
-services:
-  web:
-    build:
-        context: ./
-        dockerfile: php71-apache/Dockerfile
-    ports:
-      - "10080:80"
-      - "10443:443"
-    volumes:
-      - ./html:/var/www/html
-    environment:
-      - HTTP_PORT=10080
-      - HTTPS_PORT=10443
-  db:
-    image: mariadb:10.2
-    environment:
-      MYSQL_USER: web_user
-      MYSQL_PASSWORD: web_pwd
-      MYSQL_DATABASE: web_db
-      MYSQL_ROOT_PASSWORD: web_pwd
-    ports:
-      - "13306:3306"
-    volumes:
-      - ./mysql:/var/lib/mysql
+web:
+  image: mchauvel/php-7.1-apache-pdo:latest
+  links:
+    - db:mariadb
+  ports:
+    - "10080:80"
+    - "10443:443"
+  volumes:
+    - ./dev:/var/www/html
+  environment:
+    - HTTP_PORT=10080
+    - HTTPS_PORT=10443
+db:
+  image: mariadb:10.2
+  environment:
+    MYSQL_USER: web_user
+    MYSQL_PASSWORD: web_pwd
+    MYSQL_DATABASE: web_db
+    MYSQL_ROOT_PASSWORD: web_pwd
+  ports:
+    - "13306:3306"
+  volumes:
+    - ./mysql:/var/lib/mysql
