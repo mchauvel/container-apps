@@ -1,22 +1,22 @@
 web:
-  image: mchauvel/php-7.1-apache-pdo:latest
+  image: mchauvel/php-pdo-mysql:7.1-apache
   links:
     - db:mariadb
   ports:
     - "10080:80"
     - "10443:443"
   volumes:
-    - ./dev:/var/www/html
+    - ./html:/var/www/html
   environment:
     - HTTP_PORT=10080
     - HTTPS_PORT=10443
 db:
   image: mariadb:10.2
   environment:
-    MYSQL_USER: web_user
-    MYSQL_PASSWORD: web_pwd
-    MYSQL_DATABASE: web_db
-    MYSQL_ROOT_PASSWORD: web_pwd
+    MYSQL_USER: lamp_L
+    MYSQL_PASSWORD: lamp_P
+    MYSQL_DATABASE: lamp_db
+    MYSQL_ROOT_PASSWORD: root
   ports:
     - "13306:3306"
   volumes:

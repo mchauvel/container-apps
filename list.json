@@ -11,14 +11,14 @@
         "type": "app"
     },
     {
-        "description": "Web DEV stack",
+        "description": "PHP 7.1.x with pdo_mysql added + MariaDB 10.2.x",
         "repository": "dockerhub",
         "arch": "amd64",
-        "icon": "http://php.net/manual/fr/images/c0d23d2d6769e53e24a1b3136c064577-php_logo.png",
-        "displayName": "Web 01",
-        "name": "web01",
-        "version": "0.1.0",
-        "location": "https://hub.docker.com/_/php/",
+        "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/php71-apache-mariadb/php71_icon.png",
+        "displayName": "PHP 7.1 / Apache / MariaDB",
+        "name": "php71-apache-mariadb",
+        "version": "0.2.0",
+        "location": "https://hub.docker.com/r/mchauvel/php-pdo-mysql/",
         "type": "app"
     },
     {
