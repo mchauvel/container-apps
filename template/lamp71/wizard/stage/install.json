@@ -37,11 +37,11 @@
           "titleMap": [
           	{
           	  "name": "PHP 7.1",
-          	  "value": "1"
+          	  "value": "mchauvel/php-pdo-mysql:7.1-apache"
           	},
             {
           	  "name": "PHP 7.0",
-          	  "value": "2"
+          	  "value": "mchauvel/php-pdo-mysql:7.0-apache"
           	}
           ]
         },
