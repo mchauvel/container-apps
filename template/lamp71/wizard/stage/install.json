@@ -36,10 +36,12 @@
           "type": "select",
           "titleMap": [
           	{
-          	  "name": "PHP 7.1"
+          	  "name": "PHP 7.1",
+          	  "value": "1"
           	},
             {
-          	  "name": "PHP 7.0"
+          	  "name": "PHP 7.0",
+          	  "value": "2"
           	}
           ]
         },
