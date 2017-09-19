@@ -16,10 +16,10 @@
         "arch": "amd64",
         "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/php71-apache-mariadb/php71_icon.png",
         "displayName": "PHP 7.1 / Apache / MariaDB",
-        "name": "php71-apache-mariadb",
-        "version": "0.3.0",
+        "name": "lamp71",
+        "version": "0.4.0",
         "location": "https://hub.docker.com/r/mchauvel/php-pdo-mysql/",
-        "type": "app"
+        "type": "docker"
     },
     {
         "description": "Redmine is a free and open source web-based project management system.",
