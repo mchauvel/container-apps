@@ -5,10 +5,11 @@
     {
       "title": "Configuration APACHE",
       "schema": {
-        "image": {
+        "php_image": {
           "type": "string",
           "title": "PHP Version",
           "description": "Patched version with pdo_mysql added",
+          "default": "mchauvel/php-pdo-mysql:7.1-apache",
 		  "enum": [
             "mchauvel/php-pdo-mysql:7.1-apache",
             "mchauvel/php-pdo-mysql:7.0-apache"
@@ -32,7 +33,7 @@
       },
       "form": [
         {
-          "key": "image",
+          "key": "php_image",
           "type": "select",
           "titleMap": [
           	{
@@ -52,12 +53,32 @@
          "key": "https_port"
         }
       ]
+    },
+    {
+      "title": "Configuration MariaDB",
+      "schema": {
+        "mysql_port": {
+          "type": "integer",
+          "title": "MariaDB Port",
+		  "required": true,
+          "maximum": 65535
+        },
+        "mysql_user": {
+          "type": "string",
+          "title": "MYSQL_USER",
+		  "required": true
+        }
+      },
+      "form": [
+        "*"
+      ]
     }
   ],
   "binding": {
     "type": "yaml",
     "file": "docker-compose.yml",
     "data": {
+      "php_image": "web.image",
       "http_port": [
         "web.ports[0]",
         "web.environment.HTTP_PORT"
@@ -65,7 +86,9 @@
       "https_port": [
       	"web.ports[1]",
         "web.environment.HTTPS_PORT"
-      ]
+      ],
+      "mysql_port": "db.ports[0]",
+      "mysql_user": "db.environment.MYSQL_USER"
     }
   }
 }
