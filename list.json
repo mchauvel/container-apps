@@ -14,10 +14,10 @@
         "description": "PHP 7.1.x with pdo_mysql added + MariaDB 10.2.x",
         "repository": "dockerhub",
         "arch": "amd64",
-        "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/php71-apache-mariadb/php71_icon.png",
+        "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp71/lamp71_icon.png",
         "displayName": "PHP 7.1 / Apache / MariaDB",
         "name": "lamp71",
-        "version": "0.4.0",
+        "version": "0.5.0",
         "location": "https://hub.docker.com/r/mchauvel/php-pdo-mysql/",
         "type": "app"
     },
