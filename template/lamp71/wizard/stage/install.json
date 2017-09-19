@@ -7,8 +7,8 @@
       "schema": {
         "image": {
           "type": "string",
-          "title": "Version",
-          "description": "PHP-Apache image version",
+          "title": "PHP Version",
+          "description": "Patched version with pdo_mysql added",
 		  "enum": [
             "mchauvel/php-pdo-mysql:7.1-apache",
             "mchauvel/php-pdo-mysql:7.0-apache"
@@ -34,7 +34,16 @@
         {
           "key": "image",
           "type": "select",
-          "titleMap": "titleMap TEST"
+          "titleMap": [
+            "PHP 7.1",
+            "PHP 7.0"
+          ]
+        },
+        {
+          "key": "http_port"
+        },
+        {
+         "key": "https_port"
         }
       ]
     }
