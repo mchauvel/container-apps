@@ -1,6 +1,6 @@
 {
   "api_version": "v1",
-  "title": "Configuration PHP 7.1 / Apache / MariaDB 10.2",
+  "title": "Configuration PHP / Apache / MariaDB 10.2",
   "wizard": [
     {
       "title": "Configuration APACHE",
@@ -12,7 +12,8 @@
           "default": "mchauvel/php-pdo-mysql:7.1-apache",
 		  "enum": [
             "mchauvel/php-pdo-mysql:7.1-apache",
-            "mchauvel/php-pdo-mysql:7.0-apache"
+            "mchauvel/php-pdo-mysql:7.0-apache",
+            "mchauvel/php-pdo-mysql:5.6-apache"
           ],
           "required": true
         },
@@ -43,6 +44,10 @@
             {
           	  "name": "PHP 7.0",
           	  "value": "mchauvel/php-pdo-mysql:7.0-apache"
+          	},
+          	{
+          	  "name": "PHP 5.6",
+          	  "value": "mchauvel/php-pdo-mysql:5.6-apache"
           	}
           ]
         },
@@ -67,6 +72,21 @@
           "type": "string",
           "title": "MYSQL_USER",
 		  "required": true
+        },
+        "mysql_password": {
+          "type": "string",
+          "title": "MYSQL_PASSWORD",
+		  "required": true
+        },
+        "mysql_database": {
+          "type": "string",
+          "title": "MYSQL_DATABASE",
+		  "required": true
+        },
+        "mysql_root_password": {
+          "type": "string",
+          "title": "MYSQL_ROOT_PASSWORD",
+		  "required": true
         }
       },
       "form": [
@@ -88,7 +108,10 @@
         "web.environment.HTTPS_PORT"
       ],
       "mysql_port": "db.ports[0]",
-      "mysql_user": "db.environment.MYSQL_USER"
+      "mysql_user": "db.environment.MYSQL_USER",
+      "mysql_password": "db.environment.MYSQL_PASSWORD",
+      "mysql_database": "db.environment.MYSQL_DATABASE",
+      "mysql_root_password": "db.environment.MYSQL_ROOT_PASSWORD"
     }
   }
 }
