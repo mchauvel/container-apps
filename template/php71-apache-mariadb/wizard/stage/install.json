@@ -5,6 +5,16 @@
     {
       "title": "Configuration APACHE",
       "schema": {
+        "image": {
+          "type": "string",
+          "title": "Version",
+          "description": "PHP-Apache image version",
+		  "enum": [
+            "mchauvel/php-pdo-mysql:7.1-apache",
+            "mchauvel/php-pdo-mysql:7.0-apache"
+          ],
+          "required": true
+        },
         "http_port": {
           "type": "integer",
           "title": "HTTP Port",
@@ -21,7 +31,11 @@
         }
       },
       "form": [
-        "*"
+        {
+          "key": "image",
+          "type": "select",
+          "titleMap": "titleMap TEST"
+        }
       ]
     }
   ],
