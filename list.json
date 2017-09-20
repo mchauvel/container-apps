@@ -19,7 +19,7 @@
         "name": "lamp",
         "version": "0.9.1",
         "location": "https://hub.docker.com/r/mchauvel/php-pdo-mysql/",
-        "type": "app"
+        "type": "dev"
     },
     {
         "description": "Redmine is a free and open source web-based project management system.",
