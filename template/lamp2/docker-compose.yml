@@ -12,7 +12,7 @@ services:
     ports:
       - "13306:3306"
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${PWD}/data/mysql:/var/lib/mysql
   web:
     restart: always
     build:
@@ -24,7 +24,7 @@ services:
       - "10080:80"
       - "10443:443"
     volumes:
-      - ./html:/var/www/html
+      - ${PWD}/data/html:/var/www/html
     environment:
       - HTTP_PORT=10080
       - HTTPS_PORT=10443
