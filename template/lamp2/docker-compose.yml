@@ -1,3 +1,16 @@
+web:
+  build: ./php
+  dockerfile: Dockerfile-php71
+  links:
+    - db:mariadb
+  ports:
+    - "10080:80"
+    - "10443:443"
+  volumes:
+    - ./html:/var/www/html
+  environment:
+    - HTTP_PORT=10080
+    - HTTPS_PORT=10443
 db:
   image: mariadb:10.2
   environment:
@@ -9,17 +22,4 @@ db:
     - "13306:3306"
   volumes:
     - ./mysql:/var/lib/mysql
-web:
-  build: ./php
-  dockerfile: Dockerfile-php71
-  links:
-    - db
-  ports:
-    - "10080:80"
-    - "10443:443"
-  volumes:
-    - ./html:/var/www/html
-  environment:
-    - HTTP_PORT=10080
-    - HTTPS_PORT=10443
   
