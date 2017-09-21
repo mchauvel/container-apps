@@ -1,31 +1,25 @@
-version: '2'
-
-services:
-  db:
-    restart: always
-    image: mariadb:10.2
-    environment:
-      - MYSQL_USER=lamp_L
-      - MYSQL_PASSWORD=lamp_P
-      - MYSQL_DATABASE=lamp_db
-      - MYSQL_ROOT_PASSWORD=root
-    ports:
-      - "13306:3306"
-    volumes:
-      - ${PWD}/data/mysql:/var/lib/mysql
-  web:
-    restart: always
-    build:
-      context: ./php
-      dockerfile: Dockerfile-php71
-    depends_on:
-      - db
-    ports:
-      - "10080:80"
-      - "10443:443"
-    volumes:
-      - ${PWD}/data/html:/var/www/html
-    environment:
-      - HTTP_PORT=10080
-      - HTTPS_PORT=10443
+db:
+  image: mariadb:10.2
+  environment:
+    - MYSQL_USER=lamp_L
+    - MYSQL_PASSWORD=lamp_P
+    - MYSQL_DATABASE=lamp_db
+    - MYSQL_ROOT_PASSWORD=root
+  ports:
+    - "13306:3306"
+  volumes:
+    - ./mysql:/var/lib/mysql
+web:
+  build: ./php
+  dockerfile: Dockerfile-php71
+  links:
+    - db
+  ports:
+    - "10080:80"
+    - "10443:443"
+  volumes:
+    - ./html:/var/www/html
+  environment:
+    - HTTP_PORT=10080
+    - HTTPS_PORT=10443
   
