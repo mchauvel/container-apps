@@ -28,7 +28,7 @@
         "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp2/lamp_icon.png",
         "displayName": "PHP / Apache / MariaDB",
         "name": "lamp2",
-        "version": "0.10.1",
+        "version": "0.10.2",
         "location": "https://hub.docker.com/_/php/",
         "type": "app"
     },

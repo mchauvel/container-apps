@@ -5,7 +5,7 @@
     {
       "title": "Configuration APACHE",
       "schema": {
-        "php_image": {
+        "php_version": {
           "type": "string",
           "title": "PHP Version",
           "description": "Patched version with pdo_mysql added",
@@ -35,7 +35,7 @@
       },
       "form": [
         {
-          "key": "php_image",
+          "key": "php_version",
           "type": "select",
           "titleMap": [
           	{
