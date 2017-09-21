@@ -44,6 +44,17 @@
         "type": "app"
     },
     {
+        "description": "PHP with pdo_mysql added + MariaDB 10.2.x",
+        "repository": "dockerhub",
+        "arch": "amd64",
+        "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp4/lamp_icon.png",
+        "displayName": "PHP / Apache / MariaDB",
+        "name": "lamp4",
+        "version": "4.0.1",
+        "location": "https://hub.docker.com/_/php/",
+        "type": "app"
+    },
+    {
         "description": "Redmine is a free and open source web-based project management system.",
         "repository": "dockerhub",
         "arch": "amd64",
