@@ -39,7 +39,7 @@
         "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp3/lamp_icon.png",
         "displayName": "PHP / Apache / MariaDB",
         "name": "lamp3",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "location": "https://hub.docker.com/_/php/",
         "type": "app"
     },
