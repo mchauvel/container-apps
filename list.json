@@ -17,7 +17,7 @@
         "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp/lamp_icon.png",
         "displayName": "PHP / Apache / MariaDB",
         "name": "lamp",
-        "version": "0.9.1",
+        "version": "1.0.24",
         "location": "https://hub.docker.com/r/mchauvel/php-pdo-mysql/",
         "type": "app"
     },
@@ -28,7 +28,18 @@
         "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp2/lamp_icon.png",
         "displayName": "PHP / Apache / MariaDB",
         "name": "lamp2",
-        "version": "0.10.2",
+        "version": "2.0.6",
+        "location": "https://hub.docker.com/_/php/",
+        "type": "app"
+    },
+    {
+        "description": "PHP with pdo_mysql added + MariaDB 10.2.x",
+        "repository": "dockerhub",
+        "arch": "amd64",
+        "icon": "https://raw.githubusercontent.com/mchauvel/container-apps/master/template/lamp3/lamp_icon.png",
+        "displayName": "PHP / Apache / MariaDB",
+        "name": "lamp3",
+        "version": "3.0.1",
         "location": "https://hub.docker.com/_/php/",
         "type": "app"
     },
