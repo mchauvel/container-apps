@@ -1,6 +1,7 @@
 web:
   build: ./php
   dockerfile: Dockerfile-php71
+  image: php-pdo-mysql:7.1-apache
   links:
     - db:mariadb
   ports:
