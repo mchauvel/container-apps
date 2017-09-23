@@ -103,20 +103,20 @@
     "type": "yaml",
     "file": "docker-compose.yml",
     "data": {
-      "php_image": "web.dockerfile",
+      "php_image": "services.web.dockerfile",
       "http_port": [
-        "web.ports[0]",
-        "web.environment.HTTP_PORT"
+        "services.web.ports[0]",
+        "services.web.environment.HTTP_PORT"
       ],
       "https_port": [
-      	"web.ports[1]",
-        "web.environment.HTTPS_PORT"
+      	"services.web.ports[1]",
+        "services.web.environment.HTTPS_PORT"
       ],
-      "mysql_port": "db.ports[0]",
-      "mysql_user": "db.environment.MYSQL_USER",
-      "mysql_password": "db.environment.MYSQL_PASSWORD",
-      "mysql_database": "db.environment.MYSQL_DATABASE",
-      "mysql_root_password": "db.environment.MYSQL_ROOT_PASSWORD"
+      "mysql_port": "services.db.ports[0]",
+      "mysql_user": "services.db.environment.MYSQL_USER",
+      "mysql_password": "services.db.environment.MYSQL_PASSWORD",
+      "mysql_database": "services.db.environment.MYSQL_DATABASE",
+      "mysql_root_password": "services.db.environment.MYSQL_ROOT_PASSWORD"
     }
   }
 }
