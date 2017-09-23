@@ -1,5 +1,18 @@
-networks: {}
+version: '2.0'
 services:
+  web:
+    build: .
+    environment:
+      HTTPS_PORT: '10443'
+      HTTP_PORT: '10080'
+    depends_on:
+    - db
+    network_mode: bridge
+    ports:
+    - 10080:80
+    - 10443:443
+    volumes:
+    - ./html:/var/www/html:rw
   db:
     environment:
       MYSQL_DATABASE: lamp_db
@@ -12,21 +25,6 @@ services:
     - 13306:3306
     volumes:
     - ./mysql:/var/lib/mysql:rw
-  web:
-    build:
-      context: ./php
-      dockerfile: Dockerfile-php71
-    environment:
-      HTTPS_PORT: '10443'
-      HTTP_PORT: '10080'
-    links:
-    - db:mariadb
-    network_mode: bridge
-    ports:
-    - 10080:80
-    - 10443:443
-    volumes:
-    - ./html:/var/www/html:rw
-version: '2.0'
-volumes: {}
+  
+
   
